@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:page_title) %> | LostFound</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  </head>
+
+  <body>
+  <%= render 'layouts/navbar' %>
+  <% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
+  <% if alert %><p class="alert alert-primary"><%= alert %></p> <% end %>
+    <div class= "container <%= controller_name %> <%= action_name %>">  
+     <%= yield %>
+    </div>
+   <%= render 'layouts/footer' %>
+  </body> 
+</html>
